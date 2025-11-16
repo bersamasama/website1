@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pelajari tentang ANTENA di BRIN - teknologi komunikasi dan penginderaan jauh untuk riset dan inovasi nasional.">
+    <meta name="keywords" content="ANTENA, BRIN, teknologi antena, komunikasi satelit, penginderaan jauh">
+    <title>ANTENA - Teknologi Komunikasi BRIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            background: linear-gradient(135deg, #dc3545, #b02a37);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        nav a:hover {
+            color: #ffebee;
+            transform: translateY(-3px);
+        }
+        nav a i {
+            margin-right: 8px;
+        }
+        .hero {
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(135deg, rgba(220, 53, 69, 0.9), rgba(176, 42, 55, 0.8)), url('https://source.unsplash.com/1600x900/?satellite,antenna');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+        .hero > div {
+            position: relative;
+            z-index: 2;
+            animation: heroSlideIn 1.5s ease-out;
+        }
+        @keyframes heroSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            font-weight: 300;
+        }
+        .hero select {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(45deg, #fff, #f8f9fa);
+            color: #dc3545;
+            font-weight: bold;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .hero select:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 40px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: cardFadeInUp 1s ease-out both;
+            border-left: 6px solid #dc3545;
+        }
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        @keyframes cardFadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #dc3545;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            border-bottom: 4px solid #dc3545;
+            padding-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .card h2 i {
+            margin-right: 15px;
+        }
+        .card p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-align: justify;
+        }
+        .card ul {
+            margin: 25px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+        .card ul li {
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            border-left: 5px solid #dc3545;
+        }
+        .card ul li:hover {
+            background: linear-gradient(135deg, #e9ecef, #dee2e6);
+            transform: translateX(10px);
+        }
+        .card ul li i {
+            color: #dc3545;
+            margin-right: 15px;
+            font-size: 1.2em;
+        }
+        footer {
+            background: linear-gradient(to right, #dc3545, #b02a37);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+        }
+        footer p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+        footer a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: all 0.3s ease;
+        }
+        footer a:hover {
+            color: #f8f9fa;
+            transform: scale(1.2);
+        }
+        /* Media Queries untuk Responsivitas */
+        @media (max-width: 768px) {
+            .hero {
+                height: 25vh;
+                padding: 20px;
+            }
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .hero select {
+                width: 90%;
+                max-width: 350px;
+            }
+            nav a {
+                display: block;
+                margin: 15px 0;
+            }
+            .container {
+                padding: 20px;
+                margin: 30px auto;
+            }
+            .card {
+                padding: 25px;
+            }
+            .card h2 {
+                font-size: 2em;
+            }
+            .card p, .card ul li {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .card h2 {
+                font-size: 1.8em;
+            }
+            .card h3 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><i class="fas fa-home"></i> SILAHKAN KLIK DI SINI UNTUK PENJELASAN (BRIN)</a>
+        <a href="antena.html"><i class="fas fa-satellite"></i>SILAHKAN KLIK DI SINI UNTUK PENJELASAN (ANTENA)</a>
+    </nav>
+    <section class="hero">
+        <div>
+            <h1>ANTENA</h1>
+            <p>Teknologi Komunikasi dan Penginderaan Jauh untuk Indonesia Maju</p>
+        </div>
+    </section>
+    <div class="container">
+        <div class="card" id="tentang">
+            <h2>Tentang ANTENA</h2>
+            <p>ANTENA adalah bagian dari BRIN yang fokus pada pengembangan teknologi komunikasi satelit dan penginderaan jauh. ANTENA bertugas mengembangkan sistem komunikasi yang handal untuk mendukung berbagai kegiatan riset dan inovasi nasional.</p>
+            <p>Dengan teknologi ANTENA, Indonesia dapat meningkatkan kemampuan komunikasi, navigasi, dan penginderaan jauh untuk berbagai keperluan seperti pemantauan bencana, navigasi transportasi, dan komunikasi darurat.</p>
+        </div>
+        <div class="card" id="teknologi">
+            <h2>Teknologi ANTENA</h2>
+            <ul>
+                <li><strong>Komunikasi Satelit:</strong> Sistem komunikasi menggunakan satelit untuk jangkauan nasional dan internasional.</li>
+                <li><strong>Penginderaan Jauh:</strong> Teknologi untuk memantau bumi dari luar angkasa.</li>
+                <li><strong>Navigasi:</strong> Sistem navigasi berbasis satelit untuk transportasi dan pemetaan.</li>
+                <li><strong>Komunikasi Darurat:</strong> Sistem komunikasi untuk situasi darurat dan bencana.</li>
+            </ul>
+        </div>
+        <div class="card" id="aplikasi">
+            <h2>Aplikasi ANTENA</h2>
+            <ul>
+                <li>Pemantauan cuaca dan iklim.</li>
+                <li>Pemetaan sumber daya alam.</li>
+                <li>Komunikasi di daerah terpencil.</li>
+                <li>Sistem peringatan dini bencana.</li>
+                <li>Navigasi transportasi laut dan udara.</li>
+            </ul>
+        </div>
+        <div class="card" id="gambar">
+            <h2><i class="fas fa-satellite-dish"></i>ANTENA Zodiac</h2>
+            <img src="antena1 Zodiac.PNG" alt="Teknologi Satelit ANTENA" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;">
+            <p>TBerdasarkan Peraturan Presiden Nomor 78 Tahun 2021, Badan Riset dan Inovasi Nasional (BRIN) adalah lembaga pemerintah yang berada di bawah dan bertanggung jawab kepada Presiden dalam menyelenggarakan penelitian, pengembangan, pengkajian, dan penerapan, serta invensi dan inovasi, penyelenggaraan ketenaganukliran, dan penyelenggaraan keantariksaan yang terintegrasi.
+Antena Zodiac di BRIN Parepare merupakan salah satu fasilitas utama Stasiun Bumi Penginderaan Jauh (SBPJ) yang berfungsi menerima data dari berbagai satelit penginderaan jauh. Antena ini berukuran sekitar 7,3 meter dan menggunakan frekuensi X-Band, yang umum dipakai untuk komunikasi data satelit resolusi tinggi. Dibuat oleh perusahaan asal Prancis, Antena Zodiac berperan penting dalam proses perekaman dan penerimaan data citra satelit yang kemudian digunakan untuk berbagai keperluan, seperti pemantauan cuaca, pertanian, dan pemetaan wilayah Indonesia. Terletak di kawasan strategis Parepare, Sulawesi Selatan, antena ini menjadi bagian dari sistem multimisi BRIN yang memastikan ketersediaan data penginderaan jauh nasional. Selain berfungsi teknis, antena Zodiac juga sering menjadi sarana edukasi bagi pelajar dan mahasiswa yang berkunjung untuk belajar tentang teknologi satelit dan penginderaan jauh.
+BRIN terus mengembangkan antena modern seperti antena mikrostrip, antena array, dan antena adaptif untuk meningkatkan efisiensi komunikasi nirkabel dan teknologi satelit.</p>
+        </div>
+        <div class="card" id="gambar">
+            <h2><i class="fas fa-satellite-dish"></i>ANTENA Viasat</h2>
+            <img src="antena1 viasat.PNG" alt="Teknologi Satelit ANTENA" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;">
+            <p>Antena Viasat adalah antena parabola dua arah yang digunakan untuk mengakses internet melalui satelit milik perusahaan Viasat Inc. Antena ini berfungsi mengirim dan menerima sinyal data antara pengguna dan satelit geostasioner yang terhubung ke jaringan internet global. Komponen utamanya meliputi piringan parabola, LNB (Low Noise Block), BUC (Block Up Converter), dan modem Viasat. Cara kerjanya, data dikirim dari modem ke antena, lalu diteruskan ke satelit dan stasiun bumi sebelum masuk ke jaringan internet, dan sebaliknya untuk menerima data. Kelebihan antena Viasat adalah mampu menyediakan internet di daerah terpencil dengan kecepatan tinggi, namun memiliki kelemahan berupa latensi tinggi, gangguan akibat cuaca, dan biaya instalasi yang relatif mahal.</p>
+        </div>
+        <div class="card" id="gambar">
+            <h2><i class="fas fa-satellite-dish"></i>ANTENA Orbital</h2>
+            <img src="antena1 orbital.PNG" alt="Teknologi Satelit ANTENA" style="max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;">
+            <p>Antena Orbital di KSL Stasiun Bumi Parepare milik BRIN (Badan Riset dan Inovasi Nasional) adalah salah satu perangkat penerima data satelit penginderaan jauh. Antena ini secara spesifik berfungsi untuk menerima data dari satelit-satelit yang menyediakan resolusi rendah. Data resolusi rendah ini memiliki cakupan area yang sangat luas, menjadikannya ideal untuk aplikasi pemantauan berskala besar dan pemantauan cepat, seperti pemantauan cuaca, atmosfer, deteksi awal bencana alam seperti kebakaran hutan dan banjir di wilayah yang sangat luas, serta pemetaan awal tutupan lahan regional. Keberadaan antena Orbital ini melengkapi kemampuan stasiun bumi tersebut dalam menyediakan data satelit dengan spektrum resolusi yang lengkap, dari rendah hingga tinggi.</p>
+        </div>
+        <div class="card" align="center">
+            <a href="https://brin.go.id/">klik untuk informasi lebih lanjut</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy;BRIN 2025</p>
+        <a href="https://www.facebook.com/brin.indonesia/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/channel/UCr1ihEI566IJib9P-JjENSA"><i class="fab fa-youtube"></i></a>
+        <a href="https://share.google/9OJJHPNsFJP4pOXzc"><i class="fab fa-instagram"></i></a>
+    </footer>
+    <script>
+        const select = document.getElementById('menu-select');
+        select.addEventListener('change', function() {
+            const target = this.value;
+            if (target) {
+                document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
